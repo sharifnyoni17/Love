@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Me Animation</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:#1f2235;
+    }
+
+    .container{
+        background:white;
+        width:350px;
+        padding:40px;
+        text-align:center;
+        border-radius:20px;
+        position:relative;
+        overflow:hidden;
+    }
+
+    .container img{
+        width:180px;
+        margin-bottom:20px;
+    }
+
+    h1{
+        margin-bottom:30px;
+        font-size:32px;
+    }
+
+    .btn-group{
+        position:relative;
+        height:100px;
+    }
+
+    button{
+        padding:12px 30px;
+        border:none;
+        border-radius:30px;
+        font-size:18px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    #yesBtn{
+        background:#ff1493;
+        color:white;
+        position:absolute;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+    #noBtn{
+        background:#ff69b4;
+        color:white;
+        position:absolute;
+        top:-50px;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Cartoon Image -->
+    <img src="images (1).jpg " alt="cute">
+
+    <h1>Do you love me?</h1>
+
+    <div class="btn-group">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+const container = document.querySelector(".container");
+
+noBtn.addEventListener("mouseover", () => {
+
+    const maxX = container.clientWidth - noBtn.offsetWidth;
+    const maxY = container.clientHeight - noBtn.offsetHeight;
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+
+});
+
+document.getElementById("yesBtn").addEventListener("click", () => {
+    alert("I love you too ❤️");
+});
+
+</script>
+
+</body>
+</html>
